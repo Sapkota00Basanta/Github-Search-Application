@@ -1,8 +1,9 @@
 // Import Third-Party Modules
 import React, { useState } from 'react';
-import styled, { css } from 'styled-components';
 import { FaSearch } from 'react-icons/fa';
 import { MdClear } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
+import styled, { css } from 'styled-components';
 
 // Import User-Defined Modules
 import { ISearchBarProps } from '../types/components/SearchBar.interface';
@@ -17,6 +18,12 @@ export const SearchBar: React.FC<ISearchBarProps> = ({
   onSubmit,
 }) => {
   const [inputValue, setInputValue] = useState<string>(intialInputValue);
+  const navigate = useNavigate();
+
+  const routeChange = (input: string) => {
+    const changedPath = `/search/${input}`;
+    navigate(changedPath);
+  };
 
   const handleSearchInputChange: React.ChangeEventHandler<HTMLInputElement> = (
     event
@@ -50,6 +57,7 @@ export const SearchBar: React.FC<ISearchBarProps> = ({
   };
 
   const handleInputSubmit = () => {
+    routeChange(inputValue);
     onSubmit(inputValue);
   };
 

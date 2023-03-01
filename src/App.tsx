@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 // Import User-Defined Modules
 import { IAppProps } from './types/App.interface';
-import { GlobalStyle, Theme } from './common/commonStyles';
+import { GlobalStyle, Theme } from './common/CommonStyles';
 import { ThemeProvider } from 'styled-components';
 
 /**
