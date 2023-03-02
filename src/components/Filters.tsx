@@ -4,14 +4,14 @@ import { IoMdClose } from 'react-icons/io';
 import styled, { css } from 'styled-components';
 
 // Import User-Defined Modules
-import { IFilterProps } from '../types/components/Filters.interface';
+import { IFiltersProps } from '../types/components/Filters.interface';
 import { sortLanguages } from '../common/SortLanguages';
 
 /**
  * This component is responsible for all the filter's applied
  * @returns Filtered Component
  */
-export const Filter: React.FC<IFilterProps> = ({
+export const Filters: React.FC<IFiltersProps> = ({
   data,
   handleFilter,
   setFilterActive,
@@ -35,7 +35,7 @@ export const Filter: React.FC<IFilterProps> = ({
           return (
             <Language
               key={item.label}
-              onClick={(event) => {
+              onClick={(event: any) => {
                 if (event.target.name === 'clearButton') {
                   event.stopPropagation();
                 } else {
@@ -89,14 +89,14 @@ const Title = styled.div`
   margin-bottom: 1rem; ;
 `;
 
-const Language = styled.div`
+const Language = styled.div<any>`
   ${({ theme }) => css`
     margin-left: 1rem;
     padding: 0.25rem;
     font-size: 0.9rem;
     display: flex;
     justify-content: space-between;
-    background-color: ${({ active }) =>
+    background-color: ${({ active }: any) =>
       active ? theme.colors.tertiary : null};
     gap: 1rem;
     cursor: pointer;

@@ -17,7 +17,8 @@ export const Error: React.FC<IErrorProps> = () => {
       <Container id="Error">
         <Wrapper>
           <Title>Oh no, looks like something went wrong...</Title>
-          <Gif src={process.env.PUBLIC_URL + '/redAlert.gif'} />
+          {/* <Gif src={process.env.VITE_PUBLIC_URL + '/redAlert.gif'} /> */}
+          <Gif src="public/redAlert.gif" />
           <StyledLink to="/">Back Home</StyledLink>
         </Wrapper>
       </Container>

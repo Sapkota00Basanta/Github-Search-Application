@@ -1,15 +1,15 @@
 // Import Third-Party Modules
 import React from 'react';
-import styled, { css } from 'styled-components';
 import { GoMarkGithub as GithubIcon } from 'react-icons/go';
 import { useNavigate } from 'react-router-dom';
+import styled, { css } from 'styled-components';
 
 // Import User-Defined Modules
 import { DivFlexCenter } from '../common/CommonStyles';
-import { ILandingProps } from '../types/components/Landing.interface';
+import { IHomeProps } from '../types/components/Home.interface';
 import { SearchBar } from './SearchBar';
 
-export const Landing: React.FC<ILandingProps> = () => {
+export const Home: React.FC<IHomeProps> = () => {
   const navigate = useNavigate();
 
   //Route to Search component on submit and update url params with input value
@@ -17,7 +17,6 @@ export const Landing: React.FC<ILandingProps> = () => {
     const changedPath = `/search/${input}`;
     navigate(changedPath);
   };
-
   return (
     <Container id="Filters">
       <Wrapper>
