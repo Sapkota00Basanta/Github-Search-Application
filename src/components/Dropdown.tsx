@@ -35,7 +35,7 @@ export const Dropdown: React.FC<IDropdownProps> = ({
   };
 
   return !options ? null : (
-    <Container label={label as string}>
+    <Container label={label}>
       <DropdownLabel>{`${label}: `}</DropdownLabel>
       <DropdownSelect
         value={selected}
@@ -53,11 +53,11 @@ export const Dropdown: React.FC<IDropdownProps> = ({
 };
 
 // Styled Components Defination
-const Container = styled.div`
+const Container = styled.div<any>`
   ${({ theme }) => css`
     //Only show language dropdown when screen size is below mediaQueryLarge (800px)
     @media screen and (min-width: ${theme.mediaQueryLarge}) {
-      display: ${(props) => (props?.label === 'Languages' ? 'none' : 0)};
+      display: ${(props: any) => (props?.label === 'Languages' ? 'none' : 0)};
     }
   `}
 `;
