@@ -3,3 +3,9 @@ node_modules/
 
 # Production
 dist/
+
+# Environment Values
+.env
+
+# Yarn Error Logs
+yarn-error.log
