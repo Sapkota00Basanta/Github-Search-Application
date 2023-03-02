@@ -34,10 +34,8 @@ export const SearchResults: React.FC<ISearchResultsProps> = ({
             return (
               <Repo key={id}>
                 <StyledLink
-                  to={{
-                    pathname: `/repository/${id}`,
-                    state: { data: results, updatedAt: updatedAt },
-                  }}
+                  to={`/repository/${id}`}
+                  state={{ data: results, updatedAt: updatedAt }}
                 >
                   {full_name}
                 </StyledLink>
